@@ -9,4 +9,7 @@ public class PricePoint {
 		//this.idx = idx;
 		this.is_high = is_high;
 	}
+	public String toString(){
+		return price+ ","+(is_high?"HP":"LP");
+	}
 }
