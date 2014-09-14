@@ -1,7 +1,18 @@
 package tools;
 
-public class ArrayTool {
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
+public class ArrayTool {
+	public static void printList(LinkedList<Integer> l){
+		System.out.print("IntegerList:");
+		Iterator<Integer> it = l.iterator();
+		while(it.hasNext()){
+			System.out.print(it.next()+",");
+		}
+		System.out.println("");
+	}
 	public static void printArray(int[] array){
 		for(int i : array){
 		   System.out.print(i + ", ");

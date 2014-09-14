@@ -79,6 +79,40 @@ public class Permutations {
 	}
 	
 
+	boolean [] isUsed;
+    int numLength;
+    ArrayList<ArrayList<Integer>> output;
+    ArrayList <Integer> al;
+    /**
+     * Recursive
+     * https://oj.leetcode.com/discuss/5367/recursive-java-solution
+     * @param num
+     * @return
+     */
+    public ArrayList<ArrayList<Integer>> permute_r(int[] num) {
+        numLength = num.length;
+        al = new ArrayList <Integer>();
+        output = new ArrayList<ArrayList<Integer>>();
+        isUsed = new boolean[num.length];
+        doPermutation(0, num);
+        return output;
+    }
+    public void doPermutation(int index, int[] num) {
+        // base case
+        if (index == numLength) {
+            output.add((ArrayList<Integer>)al.clone());
+            return;
+        }
+        for (int i = 0; i < numLength; i++) {
+            if (!isUsed[i]) {
+                al.add(num[i]);
+                isUsed[i] = true;
+                doPermutation(index + 1, num);
+                isUsed[i] = false;
+                al.remove(index);
+            }
+        }
+    }
 	
 	
 	
@@ -301,19 +335,20 @@ printList(tmpListp);
 	public static void main(String[] args) {
 		int[] a={1,2,3,4};
 		List<List<Integer>> res = new Permutations().permute(a);
+		//List<ArrayList<Integer>> res = new Permutations().permute_r(a);
 		System.out.println("++++++RES:");
 		for(int m=0;m<res.size();m++){
 			printList(res.get(m));
 		}
 		
 		
-		
+//test find same		
 //		List<List<Integer>> sameres = findSame(res);
 //		System.out.println("++++++SAME RES:");
 //		for(int m=0;m<sameres.size();m++){
 //			printList(sameres.get(m));
 //		}
-		
+//test remove same		
 //		Iterator<List<Integer>> itr = sameres.iterator();
 //		while(itr.hasNext()){
 //			res.remove(itr.next());
@@ -323,8 +358,7 @@ printList(tmpListp);
 //		for(int m=0;m<res.size();m++){
 //			printList(res.get(m));
 //		}
-//		
-		
+
 		
 	}
 
