@@ -1,10 +1,21 @@
 package tools;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ArrayTool {
+	
+	public static void printList(List<Integer> l){
+		System.out.print("IntegerList:");
+		Iterator<Integer> it = l.iterator();
+		while(it.hasNext()){
+			System.out.print(it.next()+",");
+		}
+		System.out.println("");
+	}
+	
 	public static void printList(LinkedList<Integer> l){
 		System.out.print("IntegerList:");
 		Iterator<Integer> it = l.iterator();

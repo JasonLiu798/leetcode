@@ -1,22 +1,23 @@
 package leetcode;
 
+import tools.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
+
+import tools.ArrayTool;
 
 
 public class BinaryTree {
 
-	public static void main(String[] args) {
-		
-	}
-
-	private class TreeNode {
-	    int val;
-	    TreeNode left;
-	     TreeNode right;
-	     TreeNode(int x) { val = x; }
-	}
 	
+
+//	private class TreeNode {
+//	    int val;
+//	    TreeNode left;
+//	    TreeNode right;
+//	    TreeNode(int x) { val = x; }
+//	}
+//	
 	public List<Integer> L;
 	
 	/**
@@ -110,7 +111,6 @@ public class BinaryTree {
     
     public void inorder(TreeNode root){
         if(root!=null){
-            
             if(root.left!=null){
                 inorder(root.left);
             }
@@ -122,6 +122,18 @@ public class BinaryTree {
         return;
     }
     
+    public void inorderR(TreeNode root){
+        if(root!=null){
+            if(root.right!=null){
+            	inorderR(root.right);
+            }
+            R.add(root.val);
+            if(root.left!=null){
+            	inorderR(root.left);
+            }
+        }
+        return;
+    }
     
     
     
@@ -130,14 +142,60 @@ public class BinaryTree {
     
     public boolean isSymmetric(TreeNode root) {
     	boolean res = false;
-    	
-    	if(root.left==null && root.right==null){
-    		res=true;
+    	L= new ArrayList();
+    	R= new ArrayList();
+    	if( root.left==null && root.right==null){
+    		res = true;
     	}else if( root.left == null || root.right == null){
-    		
+    		res = false;
+    	}else{
+    		this.inorder(root.left);
+    		this.inorderR(root.right);
+    		if(R.size()!=L.size()){
+    			res = false;
+    		}else{
+    			res = true;
+//ArrayTool.printList(L);
+//ArrayTool.printList(R);
+    			for(int i=0;i<L.size();i++){
+        			if(R.get(i)!=L.get(i)){
+        				res = false;
+        			}
+        		}
+    		}
     	}
-    	
-    	
     	return res;
     }
+    
+    
+    
+    public static void main(String[] args) {
+		/**
+				1
+			   / \
+			  2   2
+			 / \ / \
+			3  4 4  3
+		 */
+    	BinaryTree br = new BinaryTree();
+    	TreeNode root = new TreeNode(1);
+    	TreeNode l = new TreeNode(2);
+    	TreeNode r = new TreeNode(2);
+    	root.left = l;
+    	root.right = r;
+    	TreeNode ll = new TreeNode(3);
+    	TreeNode lr = new TreeNode(4);
+    	l.left = ll;
+    	l.right =lr;
+    	TreeNode rl = new TreeNode(4);
+    	TreeNode rr = new TreeNode(3);
+    	r.left = rl;
+    	r.right = rr;
+    	System.out.println("res:"+br.isSymmetric(root));
+//    	ArrayTool.printList(br.L);
+//    	ArrayTool.printList(br.R);
+
+    	
+	}
+    
 }

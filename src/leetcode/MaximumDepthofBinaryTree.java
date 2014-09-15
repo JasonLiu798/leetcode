@@ -48,14 +48,14 @@ public class MaximumDepthofBinaryTree {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode("root");
-		root.left = new TreeNode("L");
-		root.right = new TreeNode("R");
-		root.left.right = new TreeNode("LR");
-		root.left.right.left = new TreeNode("LRL");
-		maxDepthR(root, 1);
+//		TreeNode root = new TreeNode("root");
+//		root.left = new TreeNode("L");
+//		root.right = new TreeNode("R");
+//		root.left.right = new TreeNode("LR");
+//		root.left.right.left = new TreeNode("LRL");
+//		maxDepthR(root, 1);
 
-		System.out.println(maxlevel);
+		//System.out.println(maxlevel);
 		
 		/*
 		 * int leve = 1; TreeNode root = new TreeNode("root"); root.left = new
