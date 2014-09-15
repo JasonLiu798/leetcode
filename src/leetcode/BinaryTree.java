@@ -122,4 +122,22 @@ public class BinaryTree {
         return;
     }
     
+    
+    
+    
+    //public List<Integer> SL;
+    public List<Integer> R;
+    
+    public boolean isSymmetric(TreeNode root) {
+    	boolean res = false;
+    	
+    	if(root.left==null && root.right==null){
+    		res=true;
+    	}else if( root.left == null || root.right == null){
+    		
+    	}
+    	
+    	
+    	return res;
+    }
 }

@@ -17,6 +17,13 @@ import tools.LRUnit;
  * @author Jason Liu
  * Accepted	1356 ms
  */
+
+/**
+ * v4, use linked list,used item insert into first one,
+ * when reach the capacity,delete the linklist's last one
+ */
+
+
 /**
  * v3 ,hashtable;only use value,date ;
  */

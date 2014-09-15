@@ -11,7 +11,9 @@ import tools.TreeNode;
  * Last executed input:	{}
  * 
  * @author Jason Liu
- *
+ * 38 / 38 test cases passed.
+ * Status: Accepted
+ * Runtime: 332 ms
  */
 public class MaximumDepthofBinaryTree {
 
@@ -23,20 +25,26 @@ public class MaximumDepthofBinaryTree {
 		return maxlevel;
 	}
 
-	public static int maxDepthR(TreeNode root, int level) {
-		if (root.left != null) {
-			level += 1;
-			if (level > maxlevel)
-				maxlevel = level;
-			maxDepthR(root.left, level);
+	public static void maxDepthR(TreeNode root, int level) {
+		if(root==null){
+			maxlevel = 0;
+			return;
+		}else{
+    		if (root.left != null ) {
+    			level += 1;
+    			if (level > maxlevel)
+    				maxlevel = level;
+    			maxDepthR(root.left, level);
+    		}
+    		if (root.right != null) {
+    		    if(root.left==null)
+    			    level += 1;
+    			if (level > maxlevel)
+    				maxlevel = level;
+    			maxDepthR(root.right, level);
+    		}
 		}
-		if (root.right != null) {
-			level += 1;
-			if (level > maxlevel)
-				maxlevel = level;
-			maxDepthR(root.right, level);
-		}
-		return maxlevel;
+		return;
 	}
 
 	public static void main(String[] args) {
@@ -45,9 +53,9 @@ public class MaximumDepthofBinaryTree {
 		root.right = new TreeNode("R");
 		root.left.right = new TreeNode("LR");
 		root.left.right.left = new TreeNode("LRL");
-		int res = maxDepthR(root, 1);
+		maxDepthR(root, 1);
 
-		System.out.println(res);
+		System.out.println(maxlevel);
 		
 		/*
 		 * int leve = 1; TreeNode root = new TreeNode("root"); root.left = new
