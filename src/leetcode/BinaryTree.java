@@ -177,6 +177,7 @@ public class BinaryTree {
 			 / \ / \
 			3  4 4  3
 		 */
+    	/*
     	BinaryTree br = new BinaryTree();
     	TreeNode root = new TreeNode(1);
     	TreeNode l = new TreeNode(2);
@@ -192,10 +193,72 @@ public class BinaryTree {
     	r.left = rl;
     	r.right = rr;
     	System.out.println("res:"+br.isSymmetric(root));
+    	*/
 //    	ArrayTool.printList(br.L);
 //    	ArrayTool.printList(br.R);
-
-    	
+    	TreeNode r1 = new TreeNode(1);
+    	TreeNode r2 = new TreeNode(1);
+    	BinaryTree br = new BinaryTree();
+    	System.out.println(br.isSameTree(r1,r2));
 	}
+    
+    
+    
+    List<Integer> LI;
+    List<TreeNode> LT;
+    
+    public void preorder_VT(TreeNode root){
+        if(root!=null){
+            LI.add(root.val);
+            LT.add(root);
+            if(root.left!=null){
+                preorder(root.left);
+            }
+            if(root.right!=null){
+                preorder(root.right);
+            }
+        }
+        return;
+    }
+        
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p==null && q==null){
+            return true;
+        }
+        if(p==null && q!=null){
+            return false;
+        }
+        if(p!=null && q==null){
+            return false;
+        }
+        if(p!=null && q!=null){
+            LI=new ArrayList();
+            LT=new ArrayList();
+            this.preorder_VT(p);
+            List<Integer> LI1=LI;
+            List<TreeNode> LT1=LT;
+            
+            LI=new ArrayList();
+            LT=new ArrayList();
+            this.preorder_VT(q);
+            if(LI.size()!=LI1.size()||LT.size()!=LT1.size()){
+                return false;
+            }
+            boolean res = true;
+            for(int i=0;i<LI.size();i++){
+                if(LI.get(i)!=LI1.get(i)){
+                    res = false;
+                }
+                if(! LT.get(i).equals(LT1.get(i))){
+                	System.out.println("neq");
+                    res = false;
+                }
+            }
+            return res;
+        }else{
+            return false;
+        }
+        
+    }
     
 }

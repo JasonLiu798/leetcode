@@ -25,10 +25,14 @@ public class ArrayTool {
 		System.out.println("");
 	}
 	public static void printArray(int[] array){
-		for(int i : array){
-		   System.out.print(i + ", ");
+		if(array==null){
+			System.out.println("Null");
+		}else{
+			for(int i : array){
+				   System.out.print(i + ", ");
+				}
+				System.out.println("");
 		}
-		System.out.println("");
 	}
 	
 	public static void printArray(String[] array){
