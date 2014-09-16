@@ -1,6 +1,8 @@
 package leetcode;
 
+import tools.GotLR;
 import tools.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -198,6 +200,17 @@ public class BinaryTree {
 //    	ArrayTool.printList(br.R);
     	TreeNode r1 = new TreeNode(1);
     	TreeNode r2 = new TreeNode(1);
+    	
+    	TreeNode r1l = new TreeNode(2);
+    	TreeNode r1r = new TreeNode(3);
+    	r1.left = r1l;
+    	r1.right = r1r;
+    	
+    	TreeNode r2l = new TreeNode(2);
+    	TreeNode r2r = new TreeNode(3);
+    	r2.left = r2l;
+    	r2.right = r2r;
+    	
     	BinaryTree br = new BinaryTree();
     	System.out.println(br.isSameTree(r1,r2));
 	}
@@ -205,60 +218,68 @@ public class BinaryTree {
     
     
     List<Integer> LI;
-    List<TreeNode> LT;
+    List<GotLR> LT;
     
-    public void preorder_VT(TreeNode root){
+    public void preorderV(TreeNode root){
         if(root!=null){
-            LI.add(root.val);
-            LT.add(root);
+            LI.add( root.val );
+            LT.add( new GotLR(root.left!=null?true:false, root.right!=null?true:false) );
             if(root.left!=null){
-                preorder(root.left);
+            	preorderV(root.left);
             }
             if(root.right!=null){
-                preorder(root.right);
+            	preorderV(root.right);
             }
         }
         return;
     }
-        
+    
     public boolean isSameTree(TreeNode p, TreeNode q) {
+        boolean res = false;
         if(p==null && q==null){
-            return true;
+            res = true;
+            return res;
         }
         if(p==null && q!=null){
-            return false;
+            return res;
         }
         if(p!=null && q==null){
-            return false;
+            return res;
         }
         if(p!=null && q!=null){
             LI=new ArrayList();
             LT=new ArrayList();
-            this.preorder_VT(p);
+            this.preorderV(p);
             List<Integer> LI1=LI;
-            List<TreeNode> LT1=LT;
+            List<GotLR> LT1=LT;
             
             LI=new ArrayList();
             LT=new ArrayList();
-            this.preorder_VT(q);
-            if(LI.size()!=LI1.size()||LT.size()!=LT1.size()){
-                return false;
+            this.preorderV(q);
+            if( LI.size()!=LI1.size() || LT.size()!=LT1.size() ){
+                return res;
             }
-            boolean res = true;
+            res = true;
             for(int i=0;i<LI.size();i++){
-                if(LI.get(i)!=LI1.get(i)){
-                    res = false;
-                }
-                if(! LT.get(i).equals(LT1.get(i))){
-                	System.out.println("neq");
+                if( LI.get(i)!=LI1.get(i) || LT.get(i).gotL!=LT1.get(i).gotL || LT.get(i).gotR!=LT1.get(i).gotR ){
                     res = false;
                 }
             }
             return res;
-        }else{
-            return false;
         }
-        
+        return res;
+    }
+    
+    /**
+     * 
+     * @param p
+     * @param q
+     * @return
+     */
+    public boolean isSameTreeR(TreeNode p, TreeNode q) {
+        if (p==null || q==null) 
+            return p==q;
+        return (p.val == q.val) && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
     
 }
