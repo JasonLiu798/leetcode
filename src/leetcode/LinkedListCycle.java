@@ -1,6 +1,5 @@
 package leetcode;
 
-import javax.media.j3d.Link;
 
 import tools.ListNode;
 
