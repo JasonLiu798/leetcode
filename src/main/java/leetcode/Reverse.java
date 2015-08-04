@@ -12,7 +12,7 @@ package leetcode;
 public class Reverse {
 	
 	/**
-	 * reverse a number
+	 * reverse Department Top Three Salaries.sql number
 	 * @param x
 	 * @return
 	 */

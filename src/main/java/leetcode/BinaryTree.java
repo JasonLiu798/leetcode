@@ -22,7 +22,7 @@ public class BinaryTree {
 	
 	/**
 	 * P1:Binary Tree Preorder Traversal
-	 * Given a binary tree, return the preorder traversal of its nodes' values.
+	 * Given Department Top Three Salaries.sql binary tree, return the preorder traversal of its nodes' values.
 	 * For example:
 	 * Given binary tree {1,#,2,3},
 		   1
@@ -58,7 +58,7 @@ public class BinaryTree {
     
     
     /**
-     * Given a binary tree, return the postorder traversal of its nodes' values.
+     * Given Department Top Three Salaries.sql binary tree, return the postorder traversal of its nodes' values.
      * For example:
      * Given binary tree {1,#,2,3},
 		   1
@@ -91,7 +91,7 @@ public class BinaryTree {
     }
     
     /**
-     * Given a binary tree, return the inorder traversal of its nodes' values.
+     * Given Department Top Three Salaries.sql binary tree, return the inorder traversal of its nodes' values.
      * For example.Given binary tree {1,#,2,3},
 		   1
 		    \

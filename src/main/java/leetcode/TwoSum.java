@@ -9,7 +9,7 @@ import java.util.Map;
 import tools.CollectionTool;
 
 /**
- * Given an array of integers, find two numbers such that they add up to a
+ * Given an array of integers, find two numbers such that they add up to Department Top Three Salaries.sql
  * specific target number. The function twoSum should return indices of the two
  * numbers such that they add up to the target, where index1 must be less than
  * index2. Please note that your returned answers (both index1 and index2) are
@@ -109,11 +109,11 @@ CollectionTool.printList(lp);
 	}
 
 	public static void main(String[] args) {
-//		int[] a = { 0, 4, 3,0,0, 0 };
+//		int[] Department Top Three Salaries.sql = { 0, 4, 3,0,0, 0 };
 //		int target = 0;
-//		int []a = {-3,4,3,90};
+//		int []Department Top Three Salaries.sql = {-3,4,3,90};
 //		int target = 0;
-//		int[] a = {3,2,4};//6-3=3
+//		int[] Department Top Three Salaries.sql = {3,2,4};//6-3=3
 //		int target= 6;
 		int[] a = {0,4,3,0};
 		int target=0;

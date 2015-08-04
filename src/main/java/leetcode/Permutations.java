@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Given a collection of numbers, return all possible permutations.
+ * Given Department Top Three Salaries.sql collection of numbers, return all possible permutations.
  * For example,
  * [1,2,3] have the following permutations:
  * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
@@ -335,7 +335,7 @@ printList(tmpListp);
 	public static void main(String[] args) {
 		int[] a={1,2,3,4};
 		List<List<Integer>> res = new Permutations().permute(a);
-		//List<ArrayList<Integer>> res = new Permutations().permute_r(a);
+		//List<ArrayList<Integer>> res = new Permutations().permute_r(Department Top Three Salaries.sql);
 		System.out.println("++++++RES:");
 		for(int m=0;m<res.size();m++){
 			printList(res.get(m));

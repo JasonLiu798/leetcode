@@ -27,16 +27,16 @@ public class SingleNumberII {
 	public static void main(String[] args) {
 		int a=5;//011
 		int b=4;//100
-		//a^b=111 7
+		//Department Top Three Salaries.sql^b=111 7
 		int xor = a^b;
 		int xor1 = (~a&b)|(a&~b);
-		// (~a&b)|(a&~b) = ~a|(a&~b) & b|(a&~b)
-//		int xor2 =(~a|(a&~b)) & (b|(a&~b));
-//		int xor3 = ( (~a|a) & (~a|~b) ) & ( (b|a) & (b|~b) ) ;
+		// (~Department Top Three Salaries.sql&b)|(Department Top Three Salaries.sql&~b) = ~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~b) & b|(Department Top Three Salaries.sql&~b)
+//		int xor2 =(~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~b)) & (b|(Department Top Three Salaries.sql&~b));
+//		int xor3 = ( (~Department Top Three Salaries.sql|Department Top Three Salaries.sql) & (~Department Top Three Salaries.sql|~b) ) & ( (b|Department Top Three Salaries.sql) & (b|~b) ) ;
 		
-//		int c=a|b;
-//		int d=a^b;
-//		int e=a&b;
+//		int c=Department Top Three Salaries.sql|b;
+//		int d=Department Top Three Salaries.sql^b;
+//		int e=Department Top Three Salaries.sql&b;
 		
 		//System.out.println( c );
 //		System.out.println( xor&d );

@@ -55,7 +55,7 @@ public class ValidNumber {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ValidNumber v = new ValidNumber();
-		String[] s={"0"," 0.1 ","abc","1 a","e10"};
+		String[] s={"0"," 0.1 ","abc","1 Department Top Three Salaries.sql","e10"};
 		for(int i=0;i<s.length;i++){
 			System.out.println( s[i] + v.isNumber(s[i]) );
 		}

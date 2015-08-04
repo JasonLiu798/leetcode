@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+ * Given Department Top Three Salaries.sql sorted array and Department Top Three Salaries.sql target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
  * You may assume no duplicates in the array.
  * Here are few examples.
  * [1,3,5,6], 5 → 2

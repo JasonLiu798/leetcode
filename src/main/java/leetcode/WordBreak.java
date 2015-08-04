@@ -11,7 +11,7 @@ public class WordBreak {
 		//test1
 //		String s = "ab";
 //		HashSet dict = new HashSet<String>();
-//		dict.add("a");
+//		dict.add("Department Top Three Salaries.sql");
 //		dict.add("b");
 //		System.out.println( wordBreak1(s,dict) );
 		
@@ -31,19 +31,19 @@ public class WordBreak {
 //		dict.add("ogs");
 //		System.out.println( wordBreak1(s,dict) );
 		
-		//test 4 "bb", ["a","b","bbb","bbbb"] ; one repeat
+		//test 4 "bb", ["Department Top Three Salaries.sql","b","bbb","bbbb"] ; one repeat
 //		String s = "bb";
 //		HashSet dict = new HashSet<String>();
-//		dict.add("a");
+//		dict.add("Department Top Three Salaries.sql");
 //		dict.add("b");
 //		dict.add("bbb");
 //		dict.add("bbbb");
 //		System.out.println( wordBreak1(s,dict) );
 		
-		//test 5 "abcd", ["a","abc","b","cd"]  ; need back
+		//test 5 "abcd", ["Department Top Three Salaries.sql","abc","b","cd"]  ; need back
 //		String s = "abcd";
 //		HashSet dict = new HashSet<String>();
-//		dict.add("a");
+//		dict.add("Department Top Three Salaries.sql");
 //		dict.add("abc");
 //		dict.add("b");
 //		dict.add("cd");

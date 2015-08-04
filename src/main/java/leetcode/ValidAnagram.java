@@ -3,7 +3,7 @@ package leetcode;
 
 /**
  * https://leetcode.com/problems/valid-anagram/
- Given two strings s and t, write a function to determine if t is an anagram of s.
+ Given two strings s and t, write Department Top Three Salaries.sql function to determine if t is an anagram of s.
  For example,
  s = "anagram", t = "nagaram", return true.
  s = "rat", t = "car", return false.

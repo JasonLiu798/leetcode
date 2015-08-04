@@ -4,7 +4,7 @@ import tools.TreeNode;
 
 /**
  * Maximum Depth of Binary Tree	2012-09-29	43.9%
- * Given a binary tree, find its maximum depth.
+ * Given Department Top Three Salaries.sql binary tree, find its maximum depth.
  * The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
  * 
  * Runtime Error Message:	Line 21: java.lang.NullPointerException

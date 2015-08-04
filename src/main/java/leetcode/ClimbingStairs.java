@@ -1,7 +1,7 @@
 package leetcode;
 
 /**
- * You are climbing a stair case. It takes n steps to reach to the top.
+ * You are climbing Department Top Three Salaries.sql stair case. It takes n steps to reach to the top.
  * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
  * @author Jason Liu
  * 45 / 45 test cases passed.

@@ -3,7 +3,7 @@ package leetcode;
 import java.util.List;
 
 /**
- * Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+ * Given Department Top Three Salaries.sql triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
  * For example, given the following triangle
 	[
 	     [2],
