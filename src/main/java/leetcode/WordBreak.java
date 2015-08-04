@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashSet;
 import java.util.Iterator;
 
-import tools.ArrayTool;
+import tools.CollectionTool;
 
 public class WordBreak {
 
@@ -204,8 +204,8 @@ System.out.println("DICT:"+tmp );
 			}
 			nextStart=0;
 		}
-		ArrayTool.printArray(str);
-		ArrayTool.printArray(idx);
+		CollectionTool.printArray(str);
+		CollectionTool.printArray(idx);
 		int act_len = i;
 		//int nextIdx = 0;		
 //System.out.println("Find next:"+findNext(nextIdx, str[2].length() ,idx));
@@ -339,8 +339,8 @@ if( tmpidx == 0){//first word
 int minIdx1=-1,minIdx2=-1;
 int k=0;
 while(k==s.length()){
-	minIdx1 = ArrayTool.findMin(idx,-1);
-	minIdx2 = ArrayTool.findMin(idx,idx[minIdx1]);
+	minIdx1 = CollectionTool.findMin(idx,-1);
+	minIdx2 = CollectionTool.findMin(idx,idx[minIdx1]);
 	if( minIdx2 == minIdx1+str[minIdx1].length() ){
 		
 		if( str[minIdx1].length()+str[minIdx2].length() <s.length() ){
@@ -351,7 +351,7 @@ while(k==s.length()){
 		}else if
 	}
 }
-//tmp2 = ArrayTool.findMin(idx);
+//tmp2 = CollectionTool.findMin(idx);
 
 for(int j=0;j<i-1;j++){
 	for(int k=j+1;k<i;k++){

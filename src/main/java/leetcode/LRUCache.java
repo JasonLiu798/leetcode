@@ -1,13 +1,9 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Map;
 
-import tools.ArrayTool;
 import tools.LRUnit;
 
 /**
@@ -164,7 +160,7 @@ public class LRUCache{
     	    		}
     				i++;
     			}
-//ArrayTool.printList(minUsedCountKeys);		
+//CollectionTool.printList(minUsedCountKeys);
 
     			//found the min used_date
     			int j=0;

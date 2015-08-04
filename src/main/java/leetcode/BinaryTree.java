@@ -6,8 +6,6 @@ import tools.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-import tools.ArrayTool;
-
 
 public class BinaryTree {
 
@@ -157,8 +155,8 @@ public class BinaryTree {
     			res = false;
     		}else{
     			res = true;
-//ArrayTool.printList(L);
-//ArrayTool.printList(R);
+//CollectionTool.printList(L);
+//CollectionTool.printList(R);
     			for(int i=0;i<L.size();i++){
         			if(R.get(i)!=L.get(i)){
         				res = false;
@@ -196,8 +194,8 @@ public class BinaryTree {
     	r.right = rr;
     	System.out.println("res:"+br.isSymmetric(root));
     	*/
-//    	ArrayTool.printList(br.L);
-//    	ArrayTool.printList(br.R);
+//    	CollectionTool.printList(br.L);
+//    	CollectionTool.printList(br.R);
     	TreeNode r1 = new TreeNode(1);
     	TreeNode r2 = new TreeNode(1);
     	

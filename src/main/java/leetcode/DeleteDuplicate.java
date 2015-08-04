@@ -2,10 +2,8 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 
-import tools.ArrayTool;
+import tools.CollectionTool;
 import tools.ListNode;
 
 /**
@@ -120,8 +118,8 @@ public class DeleteDuplicate {
 			//if(i!=0)
 			node = node.next;
 		}
-ArrayTool.printHashSet(hs);
-ArrayTool.printHashMap(hm);
+CollectionTool.printHashSet(hs);
+CollectionTool.printHashMap(hm);
 
 System.out.println("BFClean:");
 printLinkedList(fakeHead);		

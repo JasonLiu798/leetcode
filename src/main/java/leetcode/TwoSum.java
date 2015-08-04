@@ -1,14 +1,12 @@
 package leetcode;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import tools.ArrayTool;
-import tools.LRUnit;
+import tools.CollectionTool;
 
 /**
  * Given an array of integers, find two numbers such that they add up to a
@@ -63,7 +61,7 @@ public class TwoSum {
 				if(lp.size()==0){
 					return null;
 				}
-ArrayTool.printList(lp);
+CollectionTool.printList(lp);
 				if (lp.size() == 1) {
 					if(lp.get(0) == i){
 						continue;
@@ -120,6 +118,6 @@ ArrayTool.printList(lp);
 		int[] a = {0,4,3,0};
 		int target=0;
 		int[] res = new TwoSum().twoSum(a, target);
-		ArrayTool.printArray(res);
+		CollectionTool.printArray(res);
 	}
 }
