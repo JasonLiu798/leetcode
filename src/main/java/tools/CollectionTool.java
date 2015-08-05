@@ -1,13 +1,7 @@
 package tools;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CollectionTool {
 
@@ -32,9 +26,9 @@ public class CollectionTool {
 		System.out.println("");
 	}
 
-	public static void printList(List<Integer> l) {
-		System.out.print("IntegerList:");
-		Iterator<Integer> it = l.iterator();
+	public static void printList(List l) {
+		System.out.print("List:");
+		Iterator it = l.iterator();
 		while (it.hasNext()) {
 			System.out.print(it.next() + ",");
 		}
@@ -50,11 +44,11 @@ public class CollectionTool {
 		System.out.println("");
 	}
 
-	public static void printArray(int[] array) {
+	public static <T> void printArray(T[] array) {
 		if (array == null) {
 			System.out.println("Null");
 		} else {
-			for (int i : array) {
+			for (T i : array) {
 				System.out.print(i + ", ");
 			}
 			System.out.println("");
@@ -105,4 +99,18 @@ public class CollectionTool {
 		}
 		return files;
 	}
+
+	public static void printStack(Stack<Integer> stack ){
+		if (stack.empty())
+			System.out.println("Stack empty");
+		else {
+			System.out.print("Stack got "+stack.size() +" elements");
+			Enumeration items = stack.elements(); // 得到 stack 中的枚举对象
+			while (items.hasMoreElements()) //显示枚举（stack ） 中的所有元素
+				System.out.print(items.nextElement()+" ");
+		}
+		System.out.println(); //换行
+	}
+
+
 }

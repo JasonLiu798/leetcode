@@ -3,6 +3,7 @@ package tools;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by async on 2015/7/19.
@@ -36,6 +37,22 @@ public class ByteUtil {
 		int ret = 0;
 		for (int i = src.length - 1; i >= 0; i--) {
 			ret = ret << 8 | src[i] & 0xFF;
+		}
+		return ret;
+	}
+
+	public static int byte2Int(Byte[] src) {
+		int ret = 0;
+		for (int i = src.length - 1; i >= 0; i--) {
+			ret = ret << 8 | src[i] & 0xFF;
+		}
+		return ret;
+	}
+
+	public static int byte2Int(List<Integer> src) {
+		int ret = 0;
+		for (int i = src.size() - 1; i >= 0; i--) {
+			ret = ret << 8 | src.get(i) & 0xFF;
 		}
 		return ret;
 	}

@@ -118,6 +118,6 @@ CollectionTool.printList(lp);
 		int[] a = {0,4,3,0};
 		int target=0;
 		int[] res = new TwoSum().twoSum(a, target);
-		CollectionTool.printArray(res);
+//		CollectionTool.printArray(res);
 	}
 }

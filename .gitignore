@@ -3,6 +3,7 @@
 *.zip
 *.tar.gz
 *.class
+*.dat
 .mtj.tmp/
 .settings
 .classpath

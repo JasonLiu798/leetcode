@@ -205,7 +205,7 @@ System.out.println("DICT:"+tmp );
 			nextStart=0;
 		}
 		CollectionTool.printArray(str);
-		CollectionTool.printArray(idx);
+//		CollectionTool.printArray(idx);
 		int act_len = i;
 		//int nextIdx = 0;		
 //System.out.println("Find next:"+findNext(nextIdx, str[2].length() ,idx));
