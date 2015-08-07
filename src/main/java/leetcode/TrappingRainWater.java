@@ -2,7 +2,6 @@ package leetcode;
 
 import tools.CollectionTool;
 
-import java.util.List;
 
 /**
  * Hard
@@ -20,31 +19,82 @@ public class TrappingRainWater {
 	public static final int TYPELOW = -1;
 	public static final int TYPEHIGH = 1;
 	public static boolean isLog = false;
+
+	/**
+	 * loop start from two side
+	 * @param height
+	 * @return
+	 */
+	public int trap2(int[] height) {
+		//10,9,8,1,4,1,5
+		int l = 0, r = height.length -1, level = 0, water = 0;
+		while (l < r) {
+			System.out.println("l "+l+",r "+r);
+			int lower = height[height[l] < height[r] ? l++ : r--];
+			level = max(level, lower);
+			System.out.println("lower "+lower+",level "+level);
+			water += level - lower;
+		}
+		return water;
+	}
+
+	public static int max(int a,int b){
+		return a>=b?a:b;
+	}
+
+	public int trap1(int[] height) {
+		int N=height.length;
+		int water=0;
+		for (int i=0;i<N-1;){
+
+			if(height[i]==0){
+				i++;
+				continue;
+			}
+//			System.out.println("i "+i);
+			int maxIndex=i+1;
+			for (int j=i+1;j<N;j++){
+				if(height[j]>height[maxIndex]){
+					maxIndex=j;
+				}
+				if(height[j]>=height[i]){
+					break;
+				}
+			}
+//			System.out.println("maxIndex "+maxIndex);
+			int min=height[i]<height[maxIndex]?height[i]:height[maxIndex];
+//			System.out.println("min "+min);
+			//{1,5,4,3,2,1,2};
+			for (int k=i+1;k<maxIndex;k++){
+				int tmp = min-height[k];
+//				System.out.println("tmp "+tmp);
+				water+=tmp;
+			}
+			i=maxIndex;
+		}
+		return water;
+	}
+
 	/**
 	 *
 	 * @param height
 	 * @return
 	 */
 	public int trap(int[] height) {
-//		if(isLog)
-//			CollectionTool.printArray(height);
 		if(height==null||height.length<=2)
 			return 0;
 		int len = height.length-1;
 		int sum = 0;
 		int start = 0;
-
 		if(height[1]>height[0])
 			 start = findNextHighPoint(height,0);
-
-		if(isLog)
-			System.out.println("start "+start);
-
+//		if(isLog)
+//			System.out.println("start "+start);
 		for(int i=start;i<len-1;i++){
 			int left = i;
 			int right = findNextHighPoint(height, i);
-			if(isLog)
-				System.out.println(i+" right:"+right);
+//			if(isLog)
+//				System.out.println(i+" right:"+right);
 			if(right >0){
 				sum+=calc(height,left,right);
 				i=right-1;
@@ -211,7 +261,7 @@ public class TrappingRainWater {
 		//		   0 1 2 3 4 5 6 7 8 9 10 11
 		int[] h1 = {4,2,3};//=1
 		//			0 1 2
-		int[] h2 = {1,5,4,3,2,1,2,2,2};//=1
+		int[] h2 = {1,5,4,3,2,1,2};//=1
 		//			0 1 2 3 4 5 6 7 8
 		int[] h3 = {0,7,1,4,6};
 		//			0 1 2 3 4 5 6
@@ -222,6 +272,10 @@ public class TrappingRainWater {
 		int[] h6 = {5,2,1,2,1,5};
 		//		    0 1 2 3 4 5
 		int[] h7 = {10,2,1,4,1,3,5};
+		//		     0 1 2 3 4 5 6
+		int[] h8 = {5,4,1,2,1,3};//2+1+2=5
+		//		    0 1 2 3 4 5
+		int[] h9 = {10,9,8,1,4,1,5};//=4+1+4=9
 		//		     0 1 2 3 4 5 6
 //		System.out.println(t.findNext(h,3));
 //		System.out.println(t.calc(h3,1,4));
@@ -237,6 +291,8 @@ public class TrappingRainWater {
 //		System.out.println(t.findNextHighPoint(h4,0));
 //		System.out.println(t.filter(TYPELOW, h1, 0, 1));
 //		System.out.println(t.filter(TYPEHIGH, h1, 1, 2));
-		System.out.println(t.trap(h));
+//		System.out.println(t.trap1(h9));
+//		System.out.println(t.trap(h9));
+		System.out.println(t.trap2(h9));
 	}
 }

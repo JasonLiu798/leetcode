@@ -5,6 +5,35 @@ import java.util.*;
 
 public class CollectionTool {
 
+	public static ListNode initTestList(int[] a){
+		ListNode st = new ListNode(a[0]);
+		ListNode pre = st;
+		for(int i=1;i<a.length;i++){
+			ListNode newNode = new ListNode(a[i]);
+			pre.next = newNode;
+			pre = newNode;
+		}
+		return st;
+	}
+
+	public static ListNode getLCLinkedListN(ListNode l ,int n){
+//		ListNode res ;
+		for(int i=0;i<n;i++){
+			l=l.next;
+		}
+		return l;
+	}
+
+	public static void printLCLinkedList(ListNode n){
+		System.out.println("Linked List:");
+		while(n!=null){
+			System.out.print(n.val + " ");
+			n=n.next;
+		}
+		System.out.println();
+	}
+
+
 	public static void printHashMap(HashMap<Integer,ListNode> hm){
 		System.out.print("HashMap:");
 		//Map map = new HashMap();
