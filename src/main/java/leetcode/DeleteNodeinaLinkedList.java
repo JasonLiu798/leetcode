@@ -29,12 +29,12 @@ public class DeleteNodeinaLinkedList {
 
 	public static void main(String[] args) {
 		int[] a = {0,0,0};
-		ListNode l = CollectionTool.initTestList(a);
+		ListNode l = ListNode.initTestList(a);
 		DeleteNodeinaLinkedList d = new DeleteNodeinaLinkedList();
-		CollectionTool.printLCLinkedList(l);
-		ListNode dnode = CollectionTool.getLCLinkedListN(l, 0 );
+		ListNode.printLCLinkedList(l);
+		ListNode dnode = ListNode.getLCLinkedListN(l, 0 );
 		System.out.println( dnode );
 		d.deleteNode(dnode);
-		CollectionTool.printLCLinkedList(l);
+		ListNode.printLCLinkedList(l);
 	}
 }
