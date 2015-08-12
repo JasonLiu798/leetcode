@@ -1,5 +1,5 @@
 --Rank Scores
---https://leetcode.com/problems/rank-scores/
+--https://com.jason.leetcode.com/problems/rank-scores/
 
 select so.Score,q3.rank from
 (

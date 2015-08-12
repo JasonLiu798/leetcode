@@ -1,5 +1,5 @@
 --Department Highest Salary
---https://leetcode.com/problems/department-highest-salary
+--https://com.jason.leetcode.com/problems/department-highest-salary
 
 -- ----------------------------
 -- Table structure for Department

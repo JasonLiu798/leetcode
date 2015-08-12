@@ -1,5 +1,5 @@
 --Rising Temperature
---https://leetcode.com/problems/rising-temperature/
+--https://com.jason.leetcode.com/problems/rising-temperature/
 
 DROP TABLE IF EXISTS `Weather`;
 CREATE TABLE `Weather` (

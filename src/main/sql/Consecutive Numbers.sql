@@ -1,5 +1,5 @@
 --Consecutive Numbers
---https://leetcode.com/problems/consecutive-numbers/
+--https://com.jason.leetcode.com/problems/consecutive-numbers/
 
 -- ----------------------------
 -- Table structure for Logs

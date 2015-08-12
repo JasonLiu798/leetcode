@@ -1,5 +1,5 @@
 --Delete Duplicate Emails
---https://leetcode.com/problems/delete-duplicate-emails/
+--https://com.jason.leetcode.com/problems/delete-duplicate-emails/
 
 --not pass
 --You can't specify target table 'Person' for update in FROM clause

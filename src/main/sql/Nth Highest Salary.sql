@@ -1,5 +1,5 @@
 --Nth Highest Salary
---https://leetcode.com/problems/nth-highest-salary/
+--https://com.jason.leetcode.com/problems/nth-highest-salary/
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   DECLARE i_cnt INT;

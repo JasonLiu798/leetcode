@@ -1,5 +1,5 @@
 --Second Highest Salary
---https://leetcode.com/problems/second-highest-salary/
+--https://com.jason.leetcode.com/problems/second-highest-salary/
 
 
 select ifnull(max(tmp.Salary),null) as SecondHighestSalary from (

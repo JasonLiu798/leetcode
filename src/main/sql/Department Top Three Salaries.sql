@@ -1,5 +1,5 @@
 --Department Top Three Salaries
---https://leetcode.com/problems/department-top-three-salaries/
+--https://com.jason.leetcode.com/problems/department-top-three-salaries/
 
 -- ----------------------------
 -- Table structure for Employee
