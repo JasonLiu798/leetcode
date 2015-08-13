@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -28,7 +27,8 @@ public class TestNQueen {
 
 	@Test
 	public void testRes(){
-		List<List<String>> solutions = nq.solveNQueens(6);
+//		List<List<String>> solutions = nq.solveNQueens(6);
+		List<List<String>> solutions = nq.solveNQueens1(10);
 		System.out.println( solutions.size());
 		for(int i=0;i< solutions.size();i++){
 			nq.printl( solutions.get(i));

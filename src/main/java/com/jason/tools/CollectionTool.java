@@ -64,9 +64,12 @@ public class CollectionTool {
 	}
 
 	public static void printArray(int[] array) {
+		int j=0;
 		for (int i : array) {
-			System.out.print(i + ", ");
+			System.out.print("["+j+"]"+i + ", ");
+			j++;
 		}
+
 		System.out.println("");
 	}
 
