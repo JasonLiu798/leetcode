@@ -24,6 +24,7 @@ public class BestTimetoBuyandSellStockII {
 		}
 		System.out.println("");
 	}
+
 	/**
 	 * 1.clean the duplicate numbers
 	 * 2.find every high point and low point
