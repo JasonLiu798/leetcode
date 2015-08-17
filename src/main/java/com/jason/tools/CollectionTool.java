@@ -35,6 +35,16 @@ public class CollectionTool {
 		System.out.println("");
 	}
 
+
+	public static void printList(Queue q) {
+		System.out.print("Queue:");
+		Iterator it = q.iterator();
+		while (it.hasNext()) {
+			System.out.print(it.next() + ",");
+		}
+		System.out.println("");
+	}
+
 	public static void printListEnter(List l) {
 		System.out.println("List:");
 		Iterator it = l.iterator();
