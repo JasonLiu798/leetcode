@@ -48,21 +48,21 @@ public class LargestNumberTest {
 		int[] a1 = {3, 30, 34, 5, 9};
 		int[] a2 = {1};
 		int[] a3 = {1,1};
-		int[] a11 = {1,1,1};
-		int[] a4 = {199,21};
-		int[] a5 = {1,2,399,300,1024,1999,32};
-		int[] a6 =  {13,138};//138 13
-		int[] a14 = {13,132};//132 13 13132
-		int[] a13 = {13,131};//12 121
-		int[] a15 = {13,133};//123 12
-		int[] a16 = {13,130};//12 120
+		int[] a4 = {1,1,1};
+		int[] a5 = {199,21};
+		int[] a6 = {1,2,399,300,1024,1999,32};
+		int[] a7 =  {13,138};//138 13
+		int[] a8 = {13,132};//132 13 13132
+		int[] a9 = {131,13};//13 131
+		int[] a10 = {13,133};//133 13
+		int[] a11 = {13,130};//13 130
 
-		int[] a7 = {12,128,125};
-		int[] a8 = {12,128,125,32,343,5};
-		int[] a9 = {12,128,125,135,15,19,151,152};
-		int[] a10 =	{12,128,125,35,15,9,351,152};
-		int[] a12 =	{12,128,125,12,15,9,351,152};
-
+		int[] a12 = {12,128,125};
+		int[] a13 = {12,128,125,32,343,5};// 5 343 32 128 125 12
+		int[] a14 = {12,128,125,135,15,19,151,152};
+		int[] a15 =	{12,128,125,35,15,9,351,152};
+		int[] a16 =	{12,128,125,12,15,9,351,152};//9 351 152 15 128 125 12 12
+		int[] a17 = {0,0,0,0};
 //		int[] a11 =	{12,128,12,35,15,9,351,152};
 //		System.out.println(l.largestNumber(a));
 
@@ -71,10 +71,17 @@ public class LargestNumberTest {
 //		assertEquals("12812",l.largestNumber(a6));
 //		assertEquals("11",l.largestNumber(a3));
 //		assertEquals("1",l.largestNumber(a2));
-		assertEquals("12121",l.largestNumber(a13));
+//		assertEquals("13131",l.largestNumber(a13));
+//		assertEquals("12812512",l.largestNumber(a7));
+//		assertEquals("13131",l.largestNumber(a9));
+//		assertEquals("13313",l.largestNumber(a10));
+//		assertEquals("13130",l.largestNumber(a11));
+//		assertEquals("53433212812512",l.largestNumber(a13));
 //		assertEquals("399323002119991024",l.largestNumber(a5));
 
-
+		//9 351 152 15 128 125 12 12
+//		assertEquals("9351152151281251212",l.largestNumber(a16));
+		assertEquals("0",l.largestNumber(a17));
 //		List ll = l.getNums(a10);
 //		System.out.println("init");
 //		CollectionTool.printList(ll);

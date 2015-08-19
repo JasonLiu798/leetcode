@@ -8,12 +8,13 @@ import java.util.*;
  * Medium
  * Largest Number
  * https://leetcode.com/problems/largest-number/
- *
+ * Runtime: 364 ms
  */
 public class LargestNumber {
 
+
 	public static void print(List l){
-		CollectionTool.printList(l);
+//		CollectionTool.printList(l);
 	}
 	public static boolean log = false;
 
@@ -24,8 +25,6 @@ public class LargestNumber {
 		public int headidx;
 		public char[] arr;
 		public char head;
-//		public String head;
-
 		@Override
 		public String toString() {
 			return "Num{" +
@@ -37,26 +36,26 @@ public class LargestNumber {
 					'}';
 		}
 	}
-
+	/*
 	public static Comparator headCharD = new Comparator<Num>() {
 		public int compare(Num o1, Num o2) {
-//			return o2.arr[o2.headidx] - o1.arr[o1.headidx];
-//			return -o2.head.compareTo(o1.head);
 			return o2.head-o1.head;
 		}
-	};
+	};*/
 
-
-	public static Comparator headDESC = new Comparator<Num>() {
-//			@Override
-//			public int compare(Character o1, Character o2) {
-//				return o2-o1;
-//			}
-
+	public static Comparator numDESC = new Comparator<Num>() {
 		public int compare(Num o1, Num o2) {
-//			return o2.arr[o2.headidx] - o1.arr[o1.headidx];
-//			return -o2.head.compareTo(o1.head);
-			return -1;
+			int res=0;
+			for(int i=0;i<Math.min(o1.arr.length,o2.arr.length);i++){
+				if( o1.arr[i]<o2.arr[i] ){
+					res = 1;
+					break;
+				}else if( o1.arr[i]>o2.arr[i] ){
+					res = -1;
+					break;
+				}
+			}
+			return res;
 		}
 	};
 
@@ -64,7 +63,6 @@ public class LargestNumber {
 
 	public static List<Num> getNums(int[] nums){
 		List<Num> l = new LinkedList<>();
-//		int maxDigit = 0;
 		for(int i=0;i<nums.length;i++){
 			Num tmp = getNum(nums[i]);
 			if(tmp.digit> maxIdx){
@@ -75,7 +73,11 @@ public class LargestNumber {
 		return l;
 	}
 
-
+	/**
+	 * bucket sort
+	 * @param nums
+	 * @return
+	 */
 	public String largestNumber(int[] nums) {
 		if (nums.length <= 0) {
 			return "";
@@ -90,16 +92,24 @@ public class LargestNumber {
 		StringBuffer res2 = null;
 		if(log)
 			res2=new StringBuffer();
-		for(int i=0;i<lres.size();i++){
+		int zeroidx = 0;
+		for(int i=zeroidx;i<lres.size();i++){
+			if(i==zeroidx && lres.get(i).val ==0 ){
+				zeroidx++;
+				continue;
+			}
 			res.append(lres.get(i).val);
-			if(log)
+			if (log)
 				res2.append(lres.get(i).val+" ");
+		}
+		if(res.length()==0){
+			res.append("0");
 		}
 		if(log)
 			System.out.println(res2);
+
 		return res.toString();
 	}
-
 
 	public static void bucketSort(List<Num> l,int idx,List<Num> res){//int maxidx,List<Num> res){
 		if(log){
@@ -110,14 +120,11 @@ public class LargestNumber {
 		for(int i=0;i<l.size();i++){
 			Num n = l.get(i);
 			if( idx>=n.digit){
-				n.head = '0';
+				n.head = n.arr[0];
 			}else{
-				if(n.arr[idx]=='0'){
-					n.head = '0'-1;
-				}else{
-					n.head = n.arr[idx];
-				}
+				n.head=n.arr[idx];
 			}
+			n.headidx = idx;
 			List tmpl =  bucket.get(n.head);
 			if(tmpl==null){
 				tmpl = new LinkedList();
@@ -125,19 +132,48 @@ public class LargestNumber {
 			tmpl.add(n);
 			bucket.put(n.head , tmpl);
 		}
-//		System.out.println("");
-		System.out.println("after "+bucket);
+		if(log)
+			System.out.println("after "+bucket);
 		while(bucket.size()>0){
-			List ll = (List) bucket.pollLastEntry().getValue();
+			List<Num> ll = (List) bucket.pollLastEntry().getValue();
 			if(log){
 				System.out.println("poll");
 				print(ll);
 			}
 			if(ll.size()==1 || idx == maxIdx){
-				for(int i=0;i<ll.size();i++){
-					res.add((Num)ll.get(i));
+				if(ll.size()==1){
+					res.add( ll.get(0) );
+				}else {
+					for(int i=0;i<ll.size();i++){
+						Num n = ll.get(i);
+						if(n.digit<n.headidx){
+							//low length
+							char[] newarr = new char[n.arr.length*2];
+							System.arraycopy(n.arr,0,newarr,0,n.arr.length);
+							System.arraycopy(n.arr,0,newarr,n.arr.length,n.arr.length);
+							n.arr = newarr;
+						}else{//n.digit-1<=n.headidx
+							//high length
+							char[] newarr = new char[n.arr.length+1];
+							System.arraycopy(n.arr,0,newarr,0,n.arr.length);
+							newarr[n.arr.length] = n.arr[0];
+							n.arr = newarr;
+						}
+					}
+					if(log){
+						System.out.println("after fill");
+						print(ll);
+					}
+					Collections.sort(ll, numDESC);
+					if(log){
+						System.out.println("after sort");
+						print(ll);
+					}
+					for (Num n : ll) {
+						res.add(n);
+					}
 				}
-			}else{
+			}else if(ll.size()>1){
 				bucketSort(ll,idx,res);
 			}
 		}
@@ -145,8 +181,6 @@ public class LargestNumber {
 			return;
 		}
 	}
-
-
 
 	public static Num getNum(int x){
 		Num res= new Num();
@@ -162,7 +196,6 @@ public class LargestNumber {
 				x=x/10;
 				digit++;
 				if(x<10){
-//					res.headidx = digit;
 					break;
 				}
 			}
@@ -173,159 +206,35 @@ public class LargestNumber {
 	}
 
 
-
-
-	/*
-		public String largestNumber(int[] nums) {
-			if (nums.length <= 0) {
-				return "";
-			}
-			if (nums.length == 1) {
-				return nums[0] + "";
-			}
-
-			StringBuffer res = new StringBuffer();
-
-			Comparator headDESC = new Comparator<Num>() {
-	//			@Override
-	//			public int compare(Character o1, Character o2) {
-	//				return o2-o1;
-	//			}
-
-				public int compare(Num o1, Num o2) {
-					return o2.arr[o2.headidx] - o1.arr[o1.headidx];
+	/**
+	 * use string sort
+	 * @param nums
+	 * @return
+	 */
+	public String largestNumber1(int[] nums) {
+		String[] numbers = new String[nums.length];
+		for(int i = 0; i < nums.length; i++) {
+			numbers[i] = String.valueOf(nums[i]);
+		}
+		Arrays.sort(numbers, new Comparator<String>() {
+			public int compare(String o1, String o2) {
+				String s1 = o2 + o1;
+				String s2 = o1 + o2;
+				for(int i=0; i<s1.length(); i++) {
+					if(s1.charAt(i) > s2.charAt(i))
+						return 1;
+					if(s1.charAt(i) < s2.charAt(i))
+						return -1;
 				}
-			};
-
-			Comparator digASC = new Comparator<Num>() {
-				@Override
-				public int compare(Num o1, Num o2) {
-					return o1.digit - o2.digit;
-				}
-			};
-
-		//key:num of digit
-		// value:list of same digit
-		TreeMap<Integer, PriorityQueue<Num>> digitMap = new TreeMap<>();
-//		TreeMap<Character,PriorityQueue<Num>> headMap = new TreeMap<>();//headDESC);
-		TreeMap<Character, List<Num>> headMap = new TreeMap<>();//headDESC);
-
-
-		// key:head
-		// value:list of same head
-		for (int i = 0; i < nums.length; i++) {
-			Num tmp = getNum(nums[i]);
-//			PriorityQueue tmpq = digitMap.get(tmp.digit);
-//			if(tmpq==null){
-//				tmpq = new PriorityQueue<>(nums.length, headcmp);
-//				tmpq.add(tmp);
-//				digitMap.put( tmp.digit, tmpq);
-//			}else{
-//				tmpq.add(tmp);
-//			}
-//			PriorityQueue tmph = headMap.get(tmp.arr[tmp.headidx]);
-			List tmph = headMap.get(tmp.head);
-			if (tmph == null) {
-//				tmph = new PriorityQueue<>(nums.length,headDESC);
-				tmph = new LinkedList<>();
-				tmph.add(tmp);
-				headMap.put(tmp.head, tmph);
-			} else {
-				tmph.add(tmp);
+				return 0;
 			}
-		}
-
-		if (log) {
-			System.out.println(headMap);
-		}
-
-		StringBuffer res2 = null;
-		if (log) {
-			res2 = new StringBuffer();
-		}
+		});
+		StringBuilder sb = new StringBuilder();
+		for(String s : numbers)
+			sb.append(s);
+		String res = sb.toString();
+		return res.charAt(0) == '0' ? "0" : res;
 	}
-
-		/*
-		while (headMap.size() > 0) {
-//			PriorityQueue q = headMap.pollLastEntry().getValue();
-			List q = headMap.pollLastEntry().getValue();
-			if (log)
-				System.out.println(q);
-			if (q.size() > 1) {
-				int i = 0;
-				while (q.size() > 0) {
-					Num n = (Num) q.get(i);
-//					if(n.headidx == n.digit-1){
-
-//					res.append(n.val);
-//					if(log)
-//						res2.append(n.val+"-");
-//					}else{
-					if (n.headidx == n.digit - 1) {
-						n.head = '0';
-					} else {
-						n.head = n.arr[n.head + 1];
-					}
-					n.headidx++;
-//					q.offer(n);
-//					}
-				}
-			}
-		}
-		*/
-
-
-//				Num n = (Num) q.poll();
-//				if(q.size()>0) {
-//					Num n2 = (Num) q.poll();
-//				}else{
-//					res.
-//				}
-//				if( n.arr[n.headidx] == n2.arr[n2.headidx] ){
-//
-//				}
-//
-//
-//				// head equal
-//				while(n.arr[n.headidx] == n2.arr[n2.headidx]){
-//
-//				}
-//			}else{
-//				res.append( ((Num)q.poll()).val );
-//			}
-
-
-
-
-//		while(digitMap.size()>0){
-//			PriorityQueue<Num> q = digitMap.pollFirstEntry().getValue();
-//			while(q.size()>0)
-//				res.append(q.poll().val);
-//		}
-
-
-		/**
-		 * sort by head->List<Num>
-		 *     	if(headidx == length)
-		 *     		res.append
-		 * 		headidx change to second digtal
-		 *
-		 *
-//		return "";
-		return res.toString();
-	}
-*/
-
-
-//	public int getNextHead(Num n ){
-//		int i= 1;
-//		while(i<n.headidx){
-//
-//		}
-//		return
-//	}
-
-
 
 
 
