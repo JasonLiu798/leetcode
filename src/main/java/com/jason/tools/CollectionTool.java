@@ -83,6 +83,16 @@ public class CollectionTool {
 		System.out.println("");
 	}
 
+	public static void printArray(char[] array) {
+		int j=0;
+		for (int i : array) {
+			System.out.print("["+j+"]"+i + ", ");
+			j++;
+		}
+
+		System.out.println("");
+	}
+
 	public static void printArray(String[] array) {
 		for (String i : array) {
 			System.out.print(i + ", ");

@@ -8,6 +8,13 @@ package com.jason.leetcode;
  */
 public class AddBinary {
 	public static boolean log = false;
+
+	/**
+	 * cant't process lenght longer than 32,64
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	public String addBinary1(String a, String b) {
 
 		int ia = Integer.valueOf(a,2);
