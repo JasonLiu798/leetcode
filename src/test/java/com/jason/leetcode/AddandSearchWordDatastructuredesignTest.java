@@ -83,8 +83,6 @@ public class AddandSearchWordDatastructuredesignTest {
 		a.addWord("bat");
 		assertEquals(true,a.search(".at"));
 		assertEquals(true,a.search("an."));
-
-
 	}
 
 

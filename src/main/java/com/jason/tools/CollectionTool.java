@@ -73,6 +73,15 @@ public class CollectionTool {
 		}
 	}
 
+	public static void printSet(Set s ){
+		Iterator it = s.iterator();
+		System.out.println("Set:");
+		while(it.hasNext()){
+			System.out.print(it.next()+",");
+		}
+		System.out.println();
+	}
+
 	public static void printArray(int[] array) {
 		int j=0;
 		for (int i : array) {
@@ -91,6 +100,16 @@ public class CollectionTool {
 		}
 
 		System.out.println("");
+	}
+
+	public static void printArray(char[][] array) {
+		System.out.println("2D Array:");
+		for(char[] i:array){
+			for (char j : i) {
+				System.out.print( j + ",");
+			}
+			System.out.println();
+		}
 	}
 
 	public static void printArray(String[] array) {
