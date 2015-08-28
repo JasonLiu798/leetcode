@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 18.7%	Easy
  * Summary Ranges Total Accepted: 14787 Total Submissions: 79081
- Given a sorted integer array without duplicates, return the summary of its ranges.
+ Given indexA sorted integer array without duplicates, return the summary of its ranges.
  For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
 
 AC Runtime: 236 ms

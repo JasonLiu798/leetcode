@@ -64,7 +64,7 @@ public class LargestNumberTest {
 		int[] a16 =	{12,128,125,12,15,9,351,152};//9 351 152 15 128 125 12 12
 		int[] a17 = {0,0,0,0};
 //		int[] a11 =	{12,128,12,35,15,9,351,152};
-//		System.out.println(l.largestNumber(a));
+//		System.out.println(l.largestNumber(indexA));
 
 //		assertEquals("9534330",l.largestNumber(a1));
 //		assertEquals("21199",l.largestNumber(a4));

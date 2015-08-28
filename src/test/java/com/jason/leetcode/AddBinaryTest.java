@@ -27,7 +27,7 @@ public void after() throws Exception {
 
 	@Test
 	public void testAddBinary() throws Exception {
-//	String res = a.addBinary("110","11101");//100011
+//	String res = indexA.addBinary("110","11101");//100011
 //	System.out.println(res);
 		assertEquals("100011",a.addBinary("110","11101"));
 		assertEquals("1010000010010011011001000001010111100",a.addBinary("101000001001001101100100000101011110", "101000001001001101100100000101011110"));

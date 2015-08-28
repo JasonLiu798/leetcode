@@ -32,7 +32,7 @@ public class LengthofLastWordTest {
 						{"Hello World",5},
 						{"Hello Wor",3},
 						{" ",0},
-						{" aaa a   ",1},
+						{" aaa indexA   ",1},
 				});
 	}
 

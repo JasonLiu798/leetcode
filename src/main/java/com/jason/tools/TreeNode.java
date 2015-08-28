@@ -1,5 +1,7 @@
 package com.jason.tools;
 
+import sun.reflect.generics.tree.Tree;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,6 +17,41 @@ public class TreeNode {
 //		right=null;
 	}
 
+
+	public static TreeNode initNormalTree(int id){
+		TreeNode root = new TreeNode(1);
+
+		if(id==1) {
+			/**
+			 *    1
+			 * 	2 	3
+			 * 4 5 6 7
+			 */
+
+			TreeNode l = new TreeNode(2);
+			TreeNode r = new TreeNode(3);
+			root.left = l;
+			root.right = r;
+			TreeNode ll = new TreeNode(4);
+			TreeNode lr = new TreeNode(5);
+			l.left = ll;
+			l.right = lr;
+
+			TreeNode rl = new TreeNode(6);
+			TreeNode rr = new TreeNode(7);
+			r.left = rl;
+			r.right = rr;
+
+		}else if(id==2){
+			/**
+			 *    1
+			 * 	2
+			 */
+			TreeNode l = new TreeNode(2);
+			root.left = l;
+		}
+		return root;
+	}
 	public static TreeNode initSyTree(int i,boolean isSy){
 		/**
 		 * 	  1

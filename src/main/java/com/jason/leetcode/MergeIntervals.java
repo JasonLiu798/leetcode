@@ -11,7 +11,7 @@ import java.util.List;
  * Merge Intervals
  * https://leetcode.com/problems/merge-intervals/
  *
- Given a collection of intervals, merge all overlapping intervals.
+ Given indexA collection of intervals, merge all overlapping intervals.
  For example,
  Given [1,3],[2,6],[8,10],[15,18],
  return [1,6],[8,10],[15,18].
@@ -194,14 +194,14 @@ public class MergeIntervals {
 
 	public static void main(String[] args) {
 		//[1,3],[2,6],[8,10],[15,18]
-//		int [] a = {1,3,2,6,8,10,15,18};
-//		int [] a = {1,2,4,5};
-//		int [] a = {1,2,2,3,3,4};
-//		int [] a = {1,4,2,3,3,4};
-//		int [] a = {1,5,2,3,3,4};
-//		int [] a = {1,5,2,3,3,4};
-//		int [] a = {1,4,0,2,3,5};
-//		int [] a =  {2,3,2,2,3,3,1,3,5,7,2,2,4,6};
+//		int [] indexA = {1,3,2,6,8,10,15,18};
+//		int [] indexA = {1,2,4,5};
+//		int [] indexA = {1,2,2,3,3,4};
+//		int [] indexA = {1,4,2,3,3,4};
+//		int [] indexA = {1,5,2,3,3,4};
+//		int [] indexA = {1,5,2,3,3,4};
+//		int [] indexA = {1,4,0,2,3,5};
+//		int [] indexA =  {2,3,2,2,3,3,1,3,5,7,2,2,4,6};
 		int[] a = {0,2,2,3,4,4,0,1,5,7,4,5,0,0};
 		List<Interval> l = Interval.initList(a);
 //		Interval.printInterval(l);

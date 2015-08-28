@@ -5,7 +5,7 @@ import com.jason.tools.TreeNode;
 /**
  * Easy
  * Invert Binary Tree
- Invert a binary tree.
+ Invert indexA binary tree.
  https://leetcode.com/problems/invert-binary-tree/
  4
  /   \

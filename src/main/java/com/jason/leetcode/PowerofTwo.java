@@ -3,7 +3,7 @@ package com.jason.leetcode;
 /**
  * Power of Two
  * https://leetcode.com/problems/power-of-two/
- * Given an integer, write a function to determine if it is a power of two.
+ * Given an integer, write indexA function to determine if it is indexA power of two.
  * Created by JasonLiu on 2015/8/7.
  */
 public class PowerofTwo {

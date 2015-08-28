@@ -108,8 +108,8 @@ public class PalindromeLinkedList {
 
 	public static void main(String[] args) {
 		int a[] = {1,2,3,4,5,4,3,2,1};
-//		int a[] = {1,2};
-//		int a[] = {1,1,2,1};
+//		int indexA[] = {1,2};
+//		int indexA[] = {1,1,2,1};
 		ListNode l = ListNode.initTestList(a);
 		PalindromeLinkedList p = new PalindromeLinkedList();
 		ListNode.printLCLinkedList(l);

@@ -23,9 +23,9 @@ public class Numberof1Bits {
 	}
 		/*
 		while(n!=0){
-			int a = n&0x80000000;
-			System.out.println(n+","+a);
-			if(a==1){
+			int indexA = n&0x80000000;
+			System.out.println(n+","+indexA);
+			if(indexA==1){
 				cnt++;
 			}
 			n = n<<1;
@@ -54,8 +54,8 @@ public class Numberof1Bits {
 		}
 		while(n!=0){
 //			System.out.println("n "+n);
-			int a = n&0x1;
-			if(a==1){
+			int indexA = n&0x1;
+			if(indexA==1){
 				cnt++;
 			}
 			n = n>>1;
@@ -66,8 +66,8 @@ public class Numberof1Bits {
 		int res = 0;
 		while(n!=0){
 //			System.out.println("n "+n);
-			int a = n&0x1;
-			if(a==1){
+			int indexA = n&0x1;
+			if(indexA==1){
 				res++;
 			}
 			n = n>>1;

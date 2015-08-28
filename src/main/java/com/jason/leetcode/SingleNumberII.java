@@ -27,16 +27,16 @@ public class SingleNumberII {
 	public static void main(String[] args) {
 		int a=5;//011
 		int b=4;//100
-		//Department Top Three Salaries.sql^b=111 7
+		//Department Top Three Salaries.sql^indexB=111 7
 		int xor = a^b;
 		int xor1 = (~a&b)|(a&~b);
-		// (~Department Top Three Salaries.sql&b)|(Department Top Three Salaries.sql&~b) = ~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~b) & b|(Department Top Three Salaries.sql&~b)
-//		int xor2 =(~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~b)) & (b|(Department Top Three Salaries.sql&~b));
-//		int xor3 = ( (~Department Top Three Salaries.sql|Department Top Three Salaries.sql) & (~Department Top Three Salaries.sql|~b) ) & ( (b|Department Top Three Salaries.sql) & (b|~b) ) ;
+		// (~Department Top Three Salaries.sql&indexB)|(Department Top Three Salaries.sql&~indexB) = ~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~indexB) & indexB|(Department Top Three Salaries.sql&~indexB)
+//		int xor2 =(~Department Top Three Salaries.sql|(Department Top Three Salaries.sql&~indexB)) & (indexB|(Department Top Three Salaries.sql&~indexB));
+//		int xor3 = ( (~Department Top Three Salaries.sql|Department Top Three Salaries.sql) & (~Department Top Three Salaries.sql|~indexB) ) & ( (indexB|Department Top Three Salaries.sql) & (indexB|~indexB) ) ;
 		
-//		int c=Department Top Three Salaries.sql|b;
-//		int d=Department Top Three Salaries.sql^b;
-//		int e=Department Top Three Salaries.sql&b;
+//		int c=Department Top Three Salaries.sql|indexB;
+//		int d=Department Top Three Salaries.sql^indexB;
+//		int e=Department Top Three Salaries.sql&indexB;
 		
 		//System.out.println( c );
 //		System.out.println( xor&d );

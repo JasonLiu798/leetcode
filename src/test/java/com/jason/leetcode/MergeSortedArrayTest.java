@@ -35,7 +35,7 @@ public void testMovetoend() throws Exception {
 
 /** 
 * 
-* Method: copy2end(int[] a, int al, int[] b, int bl) 
+* Method: copy2end(int[] indexA, int al, int[] indexB, int bl)
 * 
 */ 
 @Test

@@ -31,7 +31,7 @@ public class AddBinary {
 
 	public String addBinary(String a, String b) {
 		if(log){
-			System.out.println("a "+a+",b "+b);
+			System.out.println("indexA "+a+",indexB "+b);
 		}
 		a = convert(a);
 		b = convert(b);

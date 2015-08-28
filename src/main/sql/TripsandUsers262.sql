@@ -75,7 +75,7 @@ SELECT Request_at Day, round(sum(if(Status = 'completed', 0, 1))/count(*),2) 'Ca
 FROM Trips t
 LEFT JOIN Users t1 ON t.Client_Id = t1.Users_Id
 WHERE t1.Banned = 'No'
-AND Request_at BETWEEN '2013-10-01' AND '2013-10-03' GROUP BY t.Request_at
+AND Request_at BETWEEN '2013-10-01' AND '2013-10-03' GROUP BY t.Request_at;
 
 
 select b.Request_at as Day,
@@ -102,7 +102,7 @@ from (
 							 group by Request_at
 						 ) b
 		on a.Request_at = b.Request_at
-order by Day
+order by Day;
 
 
 
@@ -119,5 +119,5 @@ from
 		 (select distinct Request_at from Trips) B2
 			 on B2.Request_at = B1.Request_at
 	) B
-where A.Request_at=B.Request_at and date(A.Request_at) between date("2013-10-01") and date("2013-10-03")
+where A.Request_at=B.Request_at and date(A.Request_at) between date("2013-10-01") and date("2013-10-03");
 

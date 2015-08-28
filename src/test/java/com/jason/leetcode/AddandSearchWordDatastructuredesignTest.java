@@ -20,7 +20,7 @@ public class AddandSearchWordDatastructuredesignTest {
 	@Before
 	public void before() throws Exception {
 		a.WordDictionary();
-//		a.log = true;
+//		indexA.log = true;
 		a.log = true;
 	}
 
@@ -30,43 +30,43 @@ public class AddandSearchWordDatastructuredesignTest {
 
 	@Test
 	public void testWordDictionary() throws Exception {
-//		a.addWord("bad");
-//		a.addWord("dad");
-//		a.addWord("mad");
+//		indexA.addWord("bad");
+//		indexA.addWord("dad");
+//		indexA.addWord("mad");
 //
-// addWord("at"),addWord("and"),addWord("an"),addWord("add"),search("a"),search(".at"),addWord("bat"),search(".at"),search("an."),
-//		a.addWord("a");
-//		a.addWord("ab");
+// addWord("at"),addWord("and"),addWord("an"),addWord("add"),search("indexA"),search(".at"),addWord("bat"),search(".at"),search("an."),
+//		indexA.addWord("indexA");
+//		indexA.addWord("ab");
 
-		assertEquals(true,a.search("a"));
-		assertEquals(true,a.search("a."));
+		assertEquals(true,a.search("indexA"));
+		assertEquals(true,a.search("indexA."));
 		assertEquals(true, a.search("ab"));
-		assertEquals(false,a.search(".a"));
-		assertEquals(true,a.search(".b"));
+		assertEquals(false,a.search(".indexA"));
+		assertEquals(true,a.search(".indexB"));
 		assertEquals(false,a.search("ab."));
 		assertEquals(true,a.search("."));
 
 
 		/**
-		 * addWord("a"),addWord("ab"),search("a"),search("a."),search("ab"),search(".a"),search(".b"),search("ab."),search(".")
+		 * addWord("indexA"),addWord("ab"),search("indexA"),search("indexA."),search("ab"),search(".indexA"),search(".indexB"),search("ab."),search(".")
 		 */
-//		System.out.println(a.t);
+//		System.out.println(indexA.t);
 		/**
 		 * root
-		 * b 	d 	m
-		 * a 	a 	a
+		 * indexB 	d 	m
+		 * indexA 	indexA 	indexA
 		 * d 	d 	d
 		 */
-//		assertEquals(true,a.search("bad"));
-//		assertEquals(false,a.search("pad"));
-//		assertEquals(true,a.search(".ad"));
-//		assertEquals(true,a.search("b.."));
+//		assertEquals(true,indexA.search("bad"));
+//		assertEquals(false,indexA.search("pad"));
+//		assertEquals(true,indexA.search(".ad"));
+//		assertEquals(true,indexA.search("indexB.."));
 
-//		System.out.println(a.search("bad"));
-//		System.out.println(a.search("pad"));
-//		System.out.println(a.search(".ad"));
-//		System.out.println(a.search("b.."));
-//		a.addWord("bad");
+//		System.out.println(indexA.search("bad"));
+//		System.out.println(indexA.search("pad"));
+//		System.out.println(indexA.search(".ad"));
+//		System.out.println(indexA.search("indexB.."));
+//		indexA.addWord("bad");
 	}
 
 	@Test
@@ -76,9 +76,9 @@ public class AddandSearchWordDatastructuredesignTest {
 		a.addWord("an");
 		a.addWord("add");
 
-		//search("a"),search(".at"),addWord("bat"),search(".at"),search("an."),
+		//search("indexA"),search(".at"),addWord("bat"),search(".at"),search("an."),
 		//[false,false,true,true,false,false,true,false]
-		assertEquals(false,a.search("a"));
+		assertEquals(false,a.search("indexA"));
 		assertEquals(false,a.search(".at"));
 		a.addWord("bat");
 		assertEquals(true,a.search(".at"));

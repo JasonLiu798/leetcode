@@ -33,9 +33,9 @@ public void testIsUgly() throws Exception {
 //	for(int i=2;i<15;i++)
 //		System.out.println(i+","+u.isUgly(i));
 	System.out.println(u.isUgly(-2147483648));
-//	int a = -100;
-//	int b = -a;
-//	System.out.println(b);
+//	int indexA = -100;
+//	int indexB = -indexA;
+//	System.out.println(indexB);
 	//-2147483648
 	//2	3 4 5 6 7 8 9 10 11 12 13 14 15
 	//t t t t t f t t t  f  t  f  f  t

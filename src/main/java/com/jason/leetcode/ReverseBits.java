@@ -65,7 +65,7 @@ public class ReverseBits {
 				b =b|0x1;
 			}
 			if(log) {
-				System.out.println("b "+Integer.toBinaryString(b));
+				System.out.println("indexB "+Integer.toBinaryString(b));
 			}
 		}
 		return b;
