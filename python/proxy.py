@@ -1,7 +1,7 @@
 
 class hproxy(object):
     keepalive = 10  # default keepalive timmer
-    #    timesinceping   # host unix time, used to detect disconects
+    #timesinceping   # host unix time, used to detect disconects
     #topics = ()     # used to store currently subscribed topics
     #debug = False   # should output debug messages
     address='127.0.0.1'         # broker address
@@ -10,14 +10,11 @@ class hproxy(object):
     #will            # stores the will of the client
     #username        # stores username
     #password        # stores password
-
     retain = 0
     qosLevel = 0
     requestCode = 0
     messageType = 5
-
     serializeType = 3
-
     #methodId = ""
     #serviceId = ""
     ShortMIN_VALUE = -32768
@@ -61,7 +58,7 @@ def printStrInNum(sstr):
 
 if __name__ == '__main__':
     s = hproxy('127.0.0.1',2000)
-    res = s.call({"data" :{ "uid" : "3198883", "stype": 0}, "method" : "checkusersign", "service":"user.service.userdouzservice"})
+    res = s.call({"data" :{ "uid" : "", "stype": 0}, "method" : "", "service":""})
     i=0
     totalbuf=''
     totalbuf,i = s.writeFInt(totalbuf,3,i)
