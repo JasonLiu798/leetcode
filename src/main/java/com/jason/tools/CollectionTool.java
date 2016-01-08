@@ -85,21 +85,25 @@ public class CollectionTool {
 	public static void printArray(int[] array) {
 		int j=0;
 		for (int i : array) {
-			System.out.print("["+j+"]"+i + ", ");
+			if(j!=array.length-1) {
+				System.out.print("[" + j + "]" + i + ", ");
+			}else{
+				System.out.println("[" + j + "]" + i);
+			}
 			j++;
 		}
-
-		System.out.println("");
 	}
 
 	public static void printArray(char[] array) {
 		int j=0;
 		for (int i : array) {
-			System.out.print("["+j+"]"+i + ", ");
+			if(j!=array.length-1){
+				System.out.print("["+j+"]"+i + ", ");
+			}else{
+				System.out.println("[" + j + "]" + i);
+			}
 			j++;
 		}
-
-		System.out.println("");
 	}
 
 	public static void printArray(char[][] array) {

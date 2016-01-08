@@ -2,8 +2,8 @@ package com.jason.leetcode;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+//import org.springframework.context.ApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ import static org.junit.Assert.assertEquals;
  */
 public class TestNQueen {
 
-	private static ApplicationContext context;
+//	private static ApplicationContext context;
 	private static  NQueens nq;
 
 	@BeforeClass
 	public static void  initSpring(){
-		context = new ClassPathXmlApplicationContext("ac.xml");
-		nq = (NQueens) context.getBean("nqueen");
+//		context = new ClassPathXmlApplicationContext("ac.xml");
+//		nq = (NQueens) context.getBean("nqueen");
 		nq.log = true;
 //		nq.log = false;
 	}

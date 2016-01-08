@@ -49,6 +49,44 @@ public class TreeNode {
 			 */
 			TreeNode l = new TreeNode(2);
 			root.left = l;
+		}else if(id==4){
+			/**
+			 * 2
+			 * 1 3
+			 */
+			root.val = 2;
+			TreeNode l = new TreeNode(1);
+			TreeNode r = new TreeNode(3);
+			root.left = l;
+			root.right = r;
+		}else if(id==3){
+			/**
+			 * [5,3,6,2,4,null,null,1]
+			 *		5
+			 * 	3 		6
+			 * 2 4 		n n
+			 * 1
+			 node with value 1
+			 node with value 3
+
+			 */
+			root.val = 5;
+			TreeNode l = new TreeNode(3);
+			TreeNode r = new TreeNode(6);
+			root.left = l;
+			root.right = r;
+			TreeNode ll = new TreeNode(2);
+			TreeNode lr = new TreeNode(4);
+			l.left = ll;
+			l.right = lr;
+			TreeNode lll = new TreeNode(1);
+			ll.left = lll;
+//			TreeNode rl = new TreeNode(6);
+//			TreeNode rr = new TreeNode(7);
+//			r.left = rl;
+//			r.right = rr;
+
+
 		}
 		return root;
 	}
@@ -160,5 +198,12 @@ public class TreeNode {
 		System.out.println();
 	}
 
-
+	@Override
+	public String toString() {
+		return "TreeNode{" +
+				"val=" + val +
+//				", left=" + left +
+//				", right=" + right +
+				'}';
+	}
 }
