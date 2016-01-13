@@ -9,8 +9,10 @@ https://leetcode.com/problems/longest-common-prefix/
 s1:loop compare
     read one str O(n)
     compare with others, n+(n-1)+...1 ~= O(n^2)
-    total: O(n)*O(n^2)=O(n^3)
+    total: O(n)*O(n^2) ~= O(n^3)
 s2:trie tree
+    [Trie only have lower case](http://my.oschina.net/u/158589/blog/61037)
+    [Trie](http://www.jb51.net/article/48540.htm)
     add one str O(n)
     add all n*O(n) = O(n^2)
     find longest common = O(n)
