@@ -1,5 +1,6 @@
 *.log
 *.rar
+*.pyc
 *.zip
 *.tar.gz
 *.class
