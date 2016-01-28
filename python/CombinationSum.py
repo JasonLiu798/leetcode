@@ -20,17 +20,21 @@ A solution set is:
 
 class Solution(object):
     def combinationSum(self, candidates, target):
-        def recur(candidates, target, res, pre):
+        def recur(candidates, target, res, pre,lv):
+            lv+=1
             for i in xrange(len(candidates)):
+                for lvcnt in range(lv):
+                    print '-',
+                print pre
                 if target < candidates[i]:
                     break
                 elif target == candidates[i]:
                     res.append(pre + [target])
                 else:
-                    recur(candidates[i:], target - candidates[i], res, pre + [candidates[i]])
+                    recur(candidates[i:], target - candidates[i], res, pre + [candidates[i]],lv)
         res = []
         candidates.sort()
-        recur(candidates, target, res, [])
+        recur(candidates, target, res, [],0)
         return res
 
     def combinationSum1(self, candidates, target):
@@ -66,6 +70,34 @@ class Solution(object):
                     self.bfs(nums,ntgt,tmplistn,res)#,lv)
             i+=1
 
+    #none-recur
+    def combinationSum(self, candidates, target):
+        temp = []
+        sums = 0
+        i = 0
+        candidates.sort()
+        l = len(candidates)
+        res = []
+        while  i<l:
+            if sums+candidates[i] < target:
+                temp.append(i)
+                sums += candidates[i]
+            else:
+                if sums+candidates[i] == target:
+                    temp.append(i)
+                    res.append([candidates[j] for j in temp])
+                    temp.pop()
+                if not temp:
+                    break
+                else:
+                    i = temp.pop()
+                    sums -= candidates[i]
+                    i += 1
+                    while i==l and temp:
+                        i = temp.pop()
+                        sums -= candidates[i]
+                        i += 1
+        return res
 
 if __name__ == '__main__':
     s=Solution()
@@ -73,7 +105,7 @@ if __name__ == '__main__':
     l=[8,7,4,3]
     # t=7
     t=11
-    res=s.combinationSum(l,t)
+    res=s.combinationSum1(l,t)
     print res
 
 
