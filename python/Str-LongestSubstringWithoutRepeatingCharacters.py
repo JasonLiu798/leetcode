@@ -1,8 +1,14 @@
 #!/bin/env python
+#-*- coding:utf-8 -*-
 '''
-3 medium
-https://leetcode.com/problems/longest-substring-without-repeating-characters/
+@Questions 3. Longest Substring Without Repeating Characters
+@Difficulty Medium
+@Pass       21.3%
+@link https://leetcode.com/problems/longest-substring-without-repeating-characters/
+@introduction
+Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 '''
+
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """

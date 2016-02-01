@@ -3,8 +3,8 @@
 '''
 @questions
 @Difficulty Medium
-@Pass   35.9%
-@link https://leetcode.com/problems/maximum-subarray/
+@Pass
+@link
 @introduction
 
 '''

@@ -6,8 +6,6 @@
 https://leetcode.com/problems/valid-parentheses/
 '''
 
-import myutil.List as List
-
 class Solution(object):
     #p={"(":")",")":"(","[":"]","]":"[","{":"}","}":"{"}
     p={")":"(", "]":"[", "}":"{"}
@@ -24,7 +22,6 @@ class Solution(object):
         res = True
         for w in s:
             pw = self.p.get(w)
-            # List.printList(stack)
             # print 'pw:',pw
             if pw==None:
                 stack.append(w)
@@ -40,7 +37,6 @@ class Solution(object):
                     res= False
                     break
         # print 'res',res
-        # List.printList(stack)
         if len(stack)!=0:
             res=False
         return res

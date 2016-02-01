@@ -10,7 +10,6 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively. Find t
 
 '''
 
-# from __future__ import division
 
 def isEmpty(l):
     if l==None or len(l)==0:

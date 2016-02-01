@@ -10,7 +10,6 @@ Given two numbers represented as strings, return multiplication of the numbers a
 Note: The numbers can be arbitrarily large and are non-negative.
 '''
 
-
 class Solution(object):
     def multiply(self, num1, num2):
         """
