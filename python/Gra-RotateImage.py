@@ -63,11 +63,7 @@ class Solution(object):
             """
             matrix[::] = zip(*matrix[::-1])
 
-    def rotate(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: void Do not return anything, modify matrix in-place instead.
-        """
+    def rotate3(self, matrix):
         n=len(matrix)
         for i in range(0,n):
             for j in range(i+1,n):
@@ -79,6 +75,19 @@ class Solution(object):
                 temp=matrix[i][j]
                 matrix[i][j]=matrix[i][n-j-1]
                 matrix[i][n-j-1]=temp
+
+    def rotate4(self, matrix):
+        for i in range(len(matrix), 1,-2):
+            self.recurse(matrix,i)
+
+    def recurse(self, matrix, depth):
+        n = len(matrix)
+        start = (n - depth) / 2
+        for i in range(depth-1):
+            matrix[start][start+i],matrix[start+i][n-start-1],matrix[n-start-1][n-start-i-1],\
+            matrix[n-start-i-1][start] = matrix[n-start-i-1][start],matrix[start][start+i]\
+            ,matrix[start+i][n-start-1],matrix[n-start-1][n-start-i-1]
+
 
 if __name__ == '__main__':
     s=Solution()
