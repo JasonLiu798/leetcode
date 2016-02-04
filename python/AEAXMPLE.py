@@ -17,7 +17,7 @@
 if __name__ == '__main__':
     s=Solution()
     res=s.
-    print res
+    print 'res',res
 
 
 
