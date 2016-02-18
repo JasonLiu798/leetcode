@@ -15,6 +15,9 @@ http://blog.csdn.net/wangjian8006/article/details/7487522
 
 '''
 
+import heapq
+
+
 class Solution(object):
     #dp spaceO(m*n)
     def minPathSum(self, grid):
@@ -51,6 +54,36 @@ class Solution(object):
                 dp[j] = min(dp[j], dp[j - 1]) + grid[i - 1][j - 1]
                 print i,j,dp
         return dp[-1]
+
+    # Dijkstra's Algorithm https://leetcode.com/discuss/42429/python-solution-using-dijkstras-algorithm
+    def minPathSum(self, grid):
+        min_queue = []
+        height = len(grid)
+        width = len(grid[0])
+        row = [None] * width
+        visited = [row[:] for i in xrange(height)]
+        goal = (height-1, width-1)
+        top_left = (grid[0][0], (0, 0))
+        heapq.heappush(min_queue, top_left)
+
+        while min_queue:
+            (cur_path_cost, coordinates) = heapq.heappop(min_queue)
+            (cur_height, cur_width) = coordinates
+            # Cell already visited with lower path_cost
+            # ignore
+            if visited[cur_height][cur_width]:
+                continue
+            else:
+                visited[cur_height][cur_width] = True
+            # Found target
+            if coordinates == goal:
+                return cur_path_cost
+            # Go down only if there is still room to go down
+            if cur_height + 1 < height:
+                heapq.heappush(min_queue, (cur_path_cost + grid[cur_height+1][cur_width], (cur_height+1, cur_width)))
+            # Go right
+            if cur_width + 1 < width:
+                heapq.heappush(min_queue, (cur_path_cost + grid[cur_height][cur_width+1], (cur_height, cur_width+1)))
 
 if __name__ == '__main__':
     s=Solution()
