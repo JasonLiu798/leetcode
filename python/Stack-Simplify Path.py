@@ -25,7 +25,7 @@ class Solution(object):
         if len(path)<=1:
             return path
         idx=0
-        stack=[]
+        pathlist=[]
         while idx<len(path):
             if path[idx]=='/':
                 L=idx
@@ -33,30 +33,33 @@ class Solution(object):
                 while idx<len(path) and path[idx]!='/':#get next /
                     idx+=1
                 R=idx
-                # print L,R,stack
+                # print L,R,pathlist
                 if idx<len(path):
                     sepPath=path[L+1:R]
                     if path[R]=='/' :
                         # if len(sepPath)==1:
                         if sepPath!='.':
-                            stack.append(sepPath)
+                            pathlist.append(sepPath)
                 else:
                     if path[L+1:R]!='.':
-                        stack.append(path[L+1:R])
+                        pathlist.append(path[L+1:R])
                 L=R
             idx+=1
-        res=''
-        while len(stack)>0:
-            i=stack.pop()
-            if i=='..':
+        idx,res,stack=0,'',[]
+        while idx<len(pathlist):
+            if pathlist[idx]=='..':
                 if len(stack)>0:
                     stack.pop()
             else:
-                res='/'+i+res
-        if len(res)==0:
+                stack.append(pathlist[idx])
+            idx+=1
+        if len(stack)==0:
             res='/'
+        else:
+            res='/'+'/'.join(stack)
         return res
 
+    #https://leetcode.com/discuss/66592/9-lines-of-python-code
     def simplifyPath2(self, path):
             places = [p for p in path.split("/") if p!="." and p!=""]
             print places
@@ -72,7 +75,7 @@ class Solution(object):
 if __name__ == '__main__':
     s=Solution()
     string='/a/./b/../../c/'
-    string='///'
+    # string='///'
     res=s.simplifyPath(string)
     print 'res',res
 
