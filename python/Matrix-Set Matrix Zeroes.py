@@ -58,7 +58,22 @@ class Solution(object):
         # Set the zeros for the first row
         if firstRowHasZero:
             matrix[0] = [0] * n
+    #https://leetcode.com/discuss/27909/a-python-o-m-n-solution
+    def setZeroes2(self, matrix):
+        zeroRows = set()
+        zeroCols = set()
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:
+                    zeroRows.add(i)
+                    zeroCols.add(j)
 
+        for row in zeroRows:
+            matrix[row][:] = map(lambda x:0, matrix[row])
+
+        for i in range(len(matrix)):
+            for col in zeroCols:
+                matrix[i][col] = 0
 
 if __name__ == '__main__':
     s=Solution()
