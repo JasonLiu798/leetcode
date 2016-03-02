@@ -56,7 +56,18 @@ class Solution(object):
             ret.append(item)
             ret.append( sorted(item + [head]))
         return ret
-
+    #https://leetcode.com/discuss/84227/python-dfs-simple-solution
+    def subsets2(self, nums):
+        res = []
+        self.dfs(sorted(nums), 0, [], res)
+        return res
+    def dfs(self, nums, start, path, res):
+        res.append(path)
+        for i in range(start, len(nums)):
+            self.dfs(nums, i+1, path+[nums[i]], res)
+    #https://leetcode.com/discuss/78510/56ms-python-one-liner
+    def subsets(self, nums):
+        return reduce(lambda X,y:X+[x+[y] for x in X],sorted(nums),[[]])
 
 if __name__ == '__main__':
     s=Solution()
